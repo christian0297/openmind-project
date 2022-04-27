@@ -1,0 +1,40 @@
+html{
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body{
+    margin: 0;
+}
+
+.banner-content{
+    padding: 8px 0 7px 0;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 10fr 1fr;
+  /* position: relative;
+  */ 
+    
+}
+
+.banner-close{
+    background: none;
+    border:none;
+    cursor: pointer;
+    color: #fff;
+ /*   position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);*/
+}
+
+.banner-close svg{
+    width: 20px;
+}
