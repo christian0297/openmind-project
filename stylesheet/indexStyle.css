@@ -1,0 +1,271 @@
+/*---------------General---------------*/
+html{
+    box-sizing: border-box;
+    font-size: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body{
+    margin: 0;
+    background-color: #E5E5E5;
+}
+
+
+/*General  headings*/
+h1{
+    font-weight: 700;
+    font-size: 4rem;
+    margin: 10px 0 6rem 0;
+}
+
+h2{
+    font-weight: 700;
+    font-size: 3.2rem;
+    margin: 1rem 0 3.2rem 0;
+}
+
+.tag{
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.separator{
+    height: 70px;
+}
+
+/*General cards*/
+
+.card-text p{
+    font-weight: 400;
+    font-size: 1.6rem;
+    margin: 0 0 4rem 0;
+}
+
+.card-text a{
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: #000;
+    text-decoration: none;
+}
+
+.card-text svg{
+    width: 1.3rem;
+}
+
+.btn-discover{
+    height: 4.8rem;
+    width: 17rem;
+    background-color: #000;
+    position:relative;
+}
+
+
+/*-----------------Banner----------------*/
+
+.banner{
+    background-color: #000;
+    display: grid;
+    grid-template-columns: 10fr 0.5fr;
+    align-items: center;
+    
+}
+
+.banner-text{
+    padding: 8px 0 7px 0;
+    font-size: 1.4rem;
+    color: #fff;
+    text-align: center;
+    font-weight: 700;
+    padding-left: 5%;
+}
+/*svg button to close the banner*/
+.banner-close{
+    background: none;
+    border:none;
+    cursor: pointer;
+    color: #fff;
+}
+
+.banner-close svg{
+    width: 2rem;
+}
+
+
+/*------------------Navbar--------------------*/
+
+/* general data navbar */
+.container-navbar{
+    height: 10rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    background-color: #fff;
+}
+
+.container-navbar svg{
+    display: none;
+}
+
+/* menu management */
+ul{
+    display: grid;
+    grid-template-columns: 2fr 1fr 3fr;
+    justify-items: end;
+    gap: 2rem;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+nav li {
+	display: inline-block;
+}
+
+.nav-home, .nav-listing{
+    text-decoration: none;
+    color: #000;
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+
+/* logo management */
+.logo-container{
+    margin: 0 auto;
+}
+
+.logo-container a{
+    text-decoration: none;
+}
+
+.logo{ 
+    border: 1px dashed #000;
+    padding: 3rem 2rem;
+    color: #000;
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.9rem;
+}
+
+/*-------------first section. Card "title"--------------*/
+.card-title{
+    position: relative;
+}
+
+.card-title .card-media{
+    background-image: url(../images/title-strawberries.webp);
+    background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+    height: 68.5rem; 
+}
+
+.card-title .card-text{
+    padding: 4rem 5.5rem;
+    background-color: #fff;
+    position: absolute;
+    left:2.5%;
+    bottom: 0px;
+    right: 64.25%;
+}
+
+@supports ( backdrop-filter: blur(20px) ){
+    .card-title .card-text {
+        background: rgba(255, 255, 255, 0.75);
+        backdrop-filter: blur(20px);
+    }
+}
+
+/*-------------second and third section. Card "title editorial"--------------*/
+
+.card-editorial, .card-editorial--reverse{
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+}
+.card-editorial .card-media, .card-editorial--reverse .card-media{
+    background-image: url(../images/title-editorial-strawberries.webp);
+    background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+    height: 80rem; 
+    flex: 1 0 50%;
+}
+
+.card-editorial .card-text, .card-editorial--reverse .card-text{
+    flex: 1 0 50%;
+    padding: 5%;
+}
+
+.card-editorial .card-text a, .card-editorial--reverse .card-text a{
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+.card-editorial--reverse{
+    flex-direction: row-reverse;
+}
+
+
+/* media query for small Devices */
+@media only screen and (max-width : 767px) {
+
+    /* navbar*/
+    .container-navbar{
+        height: 6.5rem;
+    }
+
+    .container-navbar svg{
+        display: inline-block;
+        width: 2rem;
+    }
+
+    .nav-home span, .nav-listing span{
+        display: none;
+    }
+
+    .logo{ 
+        padding: 0.8rem 2rem;
+    }
+
+    /*first section, card of title*/
+    h1{
+        margin-bottom: 1rem;
+    }
+    .card-title .card-media{
+        height: 37.7rem; 
+    }
+    .card-title .card-text{
+        padding: 2.6rem 0;
+        text-align: center;
+        position: static;
+        background-color: #fff;
+    }
+
+    .card-title .card-text p{
+        display: none;
+    }
+
+
+    /*second and third section, card of editorial content*/
+
+    .card-editorial, .card-editorial--reverse{
+        display: block;
+    }
+    .card-editorial .card-media, .card-editorial--reverse .card-media{
+        height: 37.5rem;
+    }
+}
