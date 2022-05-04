@@ -30,6 +30,12 @@ h2{
     margin: 1rem 0 3.2rem 0;
 }
 
+h3{
+    font-weight: 700;
+    font-size: 2.4rem;
+    margin: 0;
+}
+
 .tag{
     font-weight: 500;
     font-size: 1.2rem;
@@ -38,6 +44,7 @@ h2{
 .separator{
     height: 70px;
 }
+
 
 /*General cards*/
 
@@ -161,11 +168,8 @@ nav li {
 }
 
 .card-title .card-media{
-    background-image: url(../images/title-strawberries.webp);
-    background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-    height: 68.5rem; 
+    background: url(../images/title-strawberries.webp) no-repeat center / cover;
+    height: 685px; 
 }
 
 .card-title .card-text{
@@ -192,11 +196,8 @@ nav li {
     background-color: #fff;
 }
 .card-editorial .card-media, .card-editorial--reverse .card-media{
-    background-image: url(../images/title-editorial-strawberries.webp);
-    background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-    height: 80rem; 
+    background: url(../images/title-editorial-strawberries.webp) no-repeat center / cover;
+    height: 800px; 
     flex: 1 0 50%;
 }
 
@@ -213,11 +214,228 @@ nav li {
     transform: translate(-50%, -50%);
 }
 
-
-
 .card-editorial--reverse{
     flex-direction: row-reverse;
 }
+
+
+/*-----------Footer---------------*/
+
+
+/*slider*/
+
+.slider-container{
+    height: 150px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+
+.slider{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    justify-items: center;
+}
+
+.slider-text{
+    width: 150px;
+}
+
+
+.slider-item img{
+    width: 20px;
+    height: 20px;
+}
+
+
+/*General informations  newsletter, help and company*/
+.general-informations{
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    background-color: #fff;
+    height: 450px;
+    align-items: center;
+    justify-items: center;
+}
+
+.container-newsletter{
+    margin: 0 20%;
+}
+.newsletter h3{
+    margin-bottom: 60px;
+}
+.newsletter button{
+    height: 4.8rem;
+    width: 12rem;
+    background-color: #9D9D9D;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    
+}
+.newsletter button:hover{
+    background-color: #878787;
+}
+
+.newsletter button svg{
+    width: 1.3rem;
+}
+
+.newsletter p{
+    font-weight: 400;
+    font-size: 1rem;
+    color: #9D9D9D;
+    margin-top: 40px;
+}
+
+.newsletter p a{
+    text-decoration: none;
+    color: #9D9D9D;
+}
+.newsletter p a:hover{
+    color: black;
+}
+
+.newsletter input {
+    border: none;
+    padding: 18px 0;
+    width: 250px;
+    outline: none;
+    font-size: 14px;
+    margin-right: 15px;
+    background:
+      linear-gradient(90deg, #000, #000) center bottom/0 0.1rem no-repeat,
+      linear-gradient(90deg, #ccc, #ccc) left bottom/100% 0.1rem no-repeat;
+    transition: background-size 0.3s ease;
+  }
+  
+  
+  .newsletter input:focus {
+    background-size: 100% 0.1rem;
+  }
+
+
+
+/*....*/
+
+.help h3, .company h3{
+    font-size: 1.6rem;
+    display: inline;
+}
+
+.help ul, .company ul{
+    display:block;
+    font-size: 1.6rem;
+    font-weight: 400;
+	list-style-type: none;
+}
+
+.help li, .company li{
+    padding: 10px 0;
+}
+
+.help a, .company a{
+    color: #000;
+    text-decoration: none;
+}
+
+.help img, .company img{
+    width: 20px;
+    height: 20px;
+    transform: translateY(5px);
+    margin-right: 17px;
+}
+
+
+
+/*social media*/
+.social-media{
+    background-color: #fff;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+    column-gap: 30px;
+    row-gap: 10px;
+    flex-wrap: wrap;
+}
+
+.social-media img{
+    width: 20px;
+    height: 20px;
+} 
+
+ /*terms and conditions*/
+ .terms-and-conditions{ 
+    height: 50px;
+    background-color: #000;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.terms-and-conditions a{
+    font-weight: 600;
+    text-decoration: none;
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* button management in newsletters for medium devices */
+@media only screen and (max-width : 1308px) {
+    .newsletter button{
+        margin-top: 40px;
+    }
+    .newsletter p{
+        margin-top: 20px;
+    }
+    
+     .newsletter h3{
+        margin-bottom: 30px;
+    }
+} 
+
+
+
+
+
+/*slider*/
+@media only screen and (max-width : 920px) {
+    
+    .slider {
+        /* line them up horizontally */
+        display: flex;
+      
+        /* allow for scrolling */
+        overflow-x: auto;
+    }
+
+    .slider-item{
+        min-width: 150px;
+        flex-shrink: 0;
+    }
+} 
+
+
+
+
 
 
 /* media query for small Devices */
@@ -246,7 +464,7 @@ nav li {
         margin-bottom: 1rem;
     }
     .card-title .card-media{
-        height: 37.7rem; 
+        height: 377px; 
     }
     .card-title .card-text{
         padding: 2.6rem 0;
@@ -266,6 +484,87 @@ nav li {
         display: block;
     }
     .card-editorial .card-media, .card-editorial--reverse .card-media{
-        height: 37.5rem;
+        height: 375px;
+    }
+
+    /* GENERAL INFORMATIONS NEWSLETTER */
+
+    .general-informations{
+        display: inline-block;
+        height: auto;
+        padding-bottom: 24px;
+    }
+
+    .container-newsletter {
+        margin: 5%;
+    }
+
+    
+    .newsletter h3{
+        margin-bottom: 20PX;
+    }
+
+
+    /* help and company accordion */
+    .accordion-label{
+        padding: 14px 5%;
+      background-color: #F5F5F5;
+         cursor: pointer;
+         border-top: 1px solid #ebebeb;
+         border-bottom: 1px solid #ebebeb;
+        position: relative;
+        
+    }
+    .accordion-label:hover{
+        background-color: #ebebeb;
+    }
+    .accordion-label::before{
+        content: "+";
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+        font-size: 3rem;
+    }
+
+
+
+    .accordion ul{
+        overflow: hidden;
+        margin: 0;
+        max-height: 0;
+        transition: max-height 0.5s ease;
+    }
+
+    
+    .accordion.active ul{
+        height: auto; 
+        /*transition non si applica se il valore è auto, con un valore fisso si.
+        soluzione: uso max-height*/
+        max-height: 500px;
+    } 
+
+    .accordion.active .accordion-label::before{
+        content: "-";
+        font-size: 5rem;
+     }
+
+
+    /*social media*/
+     .social-media span{
+        flex-basis: 100%;
+    }
+}
+
+
+
+
+/*terms and conditions for small devices*/
+@media only screen and (max-width : 547px) {
+    .terms-and-conditions{ 
+        height: 110px;
+    }
+    .terms-and-conditions span{
+       flex-basis: 100%;
     }
 }
