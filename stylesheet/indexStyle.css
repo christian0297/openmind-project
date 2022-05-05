@@ -241,6 +241,14 @@ nav li {
     display: grid;
     grid-template-columns: repeat(6,1fr);
     justify-items: center;
+
+    overflow-x: auto;
+    scrollbar-width: none; /* for Firefox */
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */ 
+}
+
+.slider::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
 }
 
 .slider-text{
@@ -423,23 +431,7 @@ nav li {
 
 
 
-/*slider  (da cancellare, è provvisorio) */
 
-@media only screen and (max-width : 920px) {
-    
-    .slider {
-        /* line them up horizontally  */
-        display: flex;
-      
-       /* allow for scrolling */
-        overflow-x: auto;
-    }
-
-    .slider-item{
-        min-width: 150px;
-        flex-shrink: 0;
-    }
-}  
 
 
 
