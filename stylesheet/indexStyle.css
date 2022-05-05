@@ -1,4 +1,4 @@
-/*---------------General---------------*/
+/*---------------Reset html/body---------------*/
 html{
     box-sizing: border-box;
     font-size: 10px;
@@ -17,7 +17,7 @@ body{
 }
 
 
-/*General  headings*/
+/*-------------General headings------------*/
 h1{
     font-weight: 700;
     font-size: 4rem;
@@ -46,7 +46,7 @@ h3{
 }
 
 
-/*General cards*/
+/*-------general attributes for cards------*/
 
 .card-text p{
     font-weight: 400;
@@ -62,7 +62,10 @@ h3{
 }
 
 .card-text svg{
-    width: 1.3rem;
+    width: 1.8rem;
+    position: absolute;
+    margin-left: 10px;
+    transform: scale(2);
 }
 
 .btn-discover{
@@ -180,6 +183,9 @@ nav li {
     bottom: 0px;
     right: 64.25%;
 }
+.card-title .card-text svg{ 
+    width: 1.3rem;
+}
 
 @supports ( backdrop-filter: blur(20px) ){
     .card-title .card-text {
@@ -209,7 +215,7 @@ nav li {
 .card-editorial .card-text a, .card-editorial--reverse .card-text a{
     color: #fff;
     position: absolute;
-    left: 50%;
+    left: 45%;
     top: 50%;
     transform: translate(-50%, -50%);
 }
@@ -241,12 +247,10 @@ nav li {
     width: 150px;
 }
 
-
 .slider-item img{
     width: 20px;
     height: 20px;
 }
-
 
 /*General informations  newsletter, help and company*/
 .general-informations{
@@ -264,6 +268,8 @@ nav li {
 .newsletter h3{
     margin-bottom: 60px;
 }
+
+/* management of the newsletter button */
 .newsletter button{
     height: 4.8rem;
     width: 12rem;
@@ -271,16 +277,21 @@ nav li {
     color: #fff;
     border: none;
     cursor: pointer;
-    
 }
+
 .newsletter button:hover{
     background-color: #878787;
 }
 
 .newsletter button svg{
-    width: 1.3rem;
+    width: 1.8rem;
+    margin-left: 10px;
+    transform: scale(2);
+    position: relative;
+    top: 3px;
 }
 
+/* management of the newsletter text */
 .newsletter p{
     font-weight: 400;
     font-size: 1rem;
@@ -292,9 +303,12 @@ nav li {
     text-decoration: none;
     color: #9D9D9D;
 }
+
 .newsletter p a:hover{
     color: black;
 }
+
+/* management of the textual input of the newsletter */
 
 .newsletter input {
     border: none;
@@ -309,14 +323,13 @@ nav li {
     transition: background-size 0.3s ease;
   }
   
-  
   .newsletter input:focus {
     background-size: 100% 0.1rem;
   }
 
 
 
-/*....*/
+/* list of links related to help and company */
 
 .help h3, .company h3{
     font-size: 1.6rem;
@@ -392,12 +405,6 @@ nav li {
 
 
 
-
-
-
-
-
-
 /* button management in newsletters for medium devices */
 @media only screen and (max-width : 1308px) {
     .newsletter button{
@@ -416,14 +423,15 @@ nav li {
 
 
 
-/*slider*/
+/*slider  (da cancellare, è provvisorio) */
+
 @media only screen and (max-width : 920px) {
     
     .slider {
-        /* line them up horizontally */
+        /* line them up horizontally  */
         display: flex;
       
-        /* allow for scrolling */
+       /* allow for scrolling */
         overflow-x: auto;
     }
 
@@ -431,7 +439,7 @@ nav li {
         min-width: 150px;
         flex-shrink: 0;
     }
-} 
+}  
 
 
 
@@ -487,7 +495,7 @@ nav li {
         height: 375px;
     }
 
-    /* GENERAL INFORMATIONS NEWSLETTER */
+    /* general informations newsletter */
 
     .general-informations{
         display: inline-block;
@@ -499,7 +507,6 @@ nav li {
         margin: 5%;
     }
 
-    
     .newsletter h3{
         margin-bottom: 20PX;
     }
@@ -508,16 +515,18 @@ nav li {
     /* help and company accordion */
     .accordion-label{
         padding: 14px 5%;
-      background-color: #F5F5F5;
-         cursor: pointer;
-         border-top: 1px solid #ebebeb;
-         border-bottom: 1px solid #ebebeb;
+        background-color: #F5F5F5;
+        cursor: pointer;
+        border-top: 1px solid #ebebeb;
+        border-bottom: 1px solid #ebebeb;
         position: relative;
         
     }
+
     .accordion-label:hover{
         background-color: #ebebeb;
     }
+
     .accordion-label::before{
         content: "+";
         position: absolute;
@@ -527,15 +536,12 @@ nav li {
         font-size: 3rem;
     }
 
-
-
     .accordion ul{
         overflow: hidden;
         margin: 0;
         max-height: 0;
         transition: max-height 0.5s ease;
     }
-
     
     .accordion.active ul{
         height: auto; 
