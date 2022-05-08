@@ -17,64 +17,15 @@ body{
 }
 
 
-/*-------------General headings------------*/
-h1{
-    font-weight: 700;
-    font-size: 4rem;
-    margin: 10px 0 6rem 0;
+svg{
+    width: 2rem;
 }
 
-h2{
-    font-weight: 700;
-    font-size: 3.2rem;
-    margin: 1rem 0 3.2rem 0;
-}
 
-h3{
-    font-weight: 700;
-    font-size: 2.4rem;
-    margin: 0;
-}
-
-.tag{
-    font-weight: 500;
-    font-size: 1.2rem;
-}
-
+/* page separator */
 .separator{
     height: 70px;
 }
-
-
-/*-------general attributes for cards------*/
-
-.card-text p{
-    font-weight: 400;
-    font-size: 1.6rem;
-    margin: 0 0 4rem 0;
-}
-
-.card-text a{
-    font-weight: 700;
-    font-size: 1.4rem;
-    color: #000;
-    text-decoration: none;
-}
-
-.card-text svg{
-    width: 1.8rem;
-    position: absolute;
-    margin-left: 10px;
-    transform: scale(2);
-}
-
-.btn-discover{
-    height: 4.8rem;
-    width: 17rem;
-    background-color: #000;
-    position:relative;
-}
-
 
 /*-----------------Banner----------------*/
 
@@ -102,9 +53,7 @@ h3{
     color: #fff;
 }
 
-.banner-close svg{
-    width: 2rem;
-}
+
 
 
 /*------------------Navbar--------------------*/
@@ -165,64 +114,6 @@ nav li {
     font-size: 1.9rem;
 }
 
-/*-------------first section. Card "title"--------------*/
-.card-title{
-    position: relative;
-}
-
-.card-title .card-media{
-    background: url(../images/title-strawberries.webp) no-repeat center / cover;
-    height: 685px; 
-}
-
-.card-title .card-text{
-    padding: 4rem 5.5rem;
-    background-color: #fff;
-    position: absolute;
-    left:2.5%;
-    bottom: 0px;
-    right: 64.25%;
-}
-.card-title .card-text svg{ 
-    width: 1.3rem;
-}
-
-@supports ( backdrop-filter: blur(20px) ){
-    .card-title .card-text {
-        background: rgba(255, 255, 255, 0.75);
-        backdrop-filter: blur(20px);
-    }
-}
-
-/*-------------second and third section. Card "title editorial"--------------*/
-
-.card-editorial, .card-editorial--reverse{
-    display: flex;
-    align-items: center;
-    background-color: #fff;
-}
-.card-editorial .card-media, .card-editorial--reverse .card-media{
-    background: url(../images/title-editorial-strawberries.webp) no-repeat center / cover;
-    height: 800px; 
-    flex: 1 0 50%;
-}
-
-.card-editorial .card-text, .card-editorial--reverse .card-text{
-    flex: 1 0 50%;
-    padding: 5%;
-}
-
-.card-editorial .card-text a, .card-editorial--reverse .card-text a{
-    color: #fff;
-    position: absolute;
-    left: 45%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.card-editorial--reverse{
-    flex-direction: row-reverse;
-}
 
 
 /*-----------Footer---------------*/
@@ -273,6 +164,13 @@ nav li {
 .container-newsletter{
     margin: 0 20%;
 }
+
+h3{
+    font-weight: 700;
+    font-size: 2.4rem;
+    margin: 0;
+}
+
 .newsletter h3{
     margin-bottom: 60px;
 }
@@ -411,8 +309,6 @@ nav li {
 
 
 
-
-
 /* button management in newsletters for medium devices */
 @media only screen and (max-width : 1308px) {
     .newsletter button{
@@ -422,19 +318,10 @@ nav li {
         margin-top: 20px;
     }
     
-     .newsletter h3{
+    .newsletter h3{
         margin-bottom: 30px;
     }
 } 
-
-
-
-
-
-
-
-
-
 
 
 
@@ -448,7 +335,6 @@ nav li {
 
     .container-navbar svg{
         display: inline-block;
-        width: 2rem;
     }
 
     .nav-home span, .nav-listing span{
@@ -459,37 +345,10 @@ nav li {
         padding: 0.8rem 2rem;
     }
 
-    /*first section, card of title*/
-    h1{
-        margin-bottom: 1rem;
-    }
-    .card-title .card-media{
-        height: 377px; 
-    }
-    .card-title .card-text{
-        padding: 2.6rem 0;
-        text-align: center;
-        position: static;
-        background-color: #fff;
-    }
 
-    .card-title .card-text p{
-        display: none;
-    }
+     /* general informations newsletter */
 
-
-    /*second and third section, card of editorial content*/
-
-    .card-editorial, .card-editorial--reverse{
-        display: block;
-    }
-    .card-editorial .card-media, .card-editorial--reverse .card-media{
-        height: 375px;
-    }
-
-    /* general informations newsletter */
-
-    .general-informations{
+     .general-informations{
         display: inline-block;
         height: auto;
         padding-bottom: 24px;
@@ -552,9 +411,8 @@ nav li {
      .social-media span{
         flex-basis: 100%;
     }
+
 }
-
-
 
 
 /*terms and conditions for small devices*/

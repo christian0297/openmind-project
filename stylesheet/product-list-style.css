@@ -1,0 +1,208 @@
+/*-------------General headings------------*/
+h1{
+    font-weight: 400;
+    font-size: 4rem;
+    line-height: 4.8rem;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h2{
+    margin: 0;
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+}
+
+button{
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+}
+
+
+/* -------Title------- */
+.productTitle-container{
+    height: 162px;
+    text-align: center;
+    background: #fff;
+    position: relative;
+    box-shadow: inset 0px 0px 90px rgba(0, 0, 0, 0.05);
+}
+
+
+
+/* -----grids menu and counter of the products/results in the list----- */
+.view-products{
+    height: 70px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.view-products .container-view-grids .view-grid-small{
+    margin-right: 10px;
+}
+
+.view-products .counter-products{
+    color: #9D9D9D;
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+}
+
+.view-products .counter-results{
+    display: none;
+    color: #6B6B6B;
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 1.6px;
+    letter-spacing: 0.05rem;
+}
+
+/* -------------------product list--------------------- */
+
+/* small grid layout */
+.products-container.small{
+    display: grid;
+    column-gap: 2px;
+    row-gap: 2px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* large grid layout */
+.products-container.large{
+    display: grid;
+    column-gap: 3px;
+    row-gap: 67px;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+/* media item */
+.product-item .product-media {
+    position: relative;
+    background: url( ../images/strawberry-product1.webp) no-repeat center / cover;
+    height: 400px; 
+    padding: 5.2% 4%;
+}
+
+/* labels in the media */
+.product-item .product-media label, .product-item .product-media span{
+    font-weight: 800;
+    font-size: 1rem;
+    line-height: 1.2rem;
+    letter-spacing: 0.05rem;
+}
+
+.product-item .product-media span{
+    position: absolute;
+    left: 4%;
+    bottom: 6%;
+}
+
+/* management of favorite products */
+.product-item .product-media .btn-heart{
+    position: absolute;
+    right: 4.5%;
+    top: 4.5%;
+}
+
+.product-item .product-media .heart-fill{
+    display: none;
+}
+
+.product-item .product-media .btn-heart.favorite svg:first-child{
+    display: none;
+}
+
+.product-item .product-media .btn-heart.favorite svg:last-child{
+    display: block;
+}
+
+
+/* text item */
+.product-text{
+    padding: 9% 4%;
+}
+
+.product-item .product-text p{
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 120%;
+    margin-bottom: 46px;
+}
+
+.product-item .product-text a{
+    text-decoration: none;
+    color: #000;
+}
+
+.product-item .product-text a .discounted-price{
+    font-weight: 800;
+    font-size: 1.4rem;
+    line-height: 200%;
+    margin-right: 8px;
+}
+
+.product-item .product-text a .original-price{
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 230%;
+    text-decoration-line: line-through;
+}
+
+/* open specific product page */
+.container-go-to-product{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.container-go-to-product:hover{
+    background-color: #fff;
+}
+
+
+/* media query for small Devices */
+@media only screen and (max-width : 767px) {
+
+    /* -----grids menu and counter of the products/results in the list----- */
+    .container-view-grids{
+        display: none;
+    }
+
+    .view-products .counter-products{
+        display: none;
+    }
+    
+    .view-products .counter-results{
+        display: block;
+    }
+
+    /* grid view for small devices */
+    .products-container.small, .products-container.large{
+        column-gap: 1px;
+        row-gap: 24px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* media item */
+    .product-item .product-media {
+        height: 187px; 
+    }
+
+    /* style for open specific product page */
+    .container-go-to-product, .product-item .product-media label, .product-item .product-media span{
+        background-color: #fff;
+    }
+
+    .container-go-to-product{
+        padding: 10px 8px;
+    }
+}

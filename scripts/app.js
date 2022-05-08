@@ -3,10 +3,10 @@
 document.querySelector(".banner-close").addEventListener("click", ()=>{
     document.querySelector(".banner").style.display = "none";
     //document.querySelector(".banner").remove();
-    //vedere quale dei due è migliore dopo aver visto lezione sul caching
+    //vedere quale dei due è migliore dopo aver visto lezione sul caching (?)
 });
 
-//-------------------------accordion----------------------------------
+//-------------------------accordion footer------------------------------
 const accordion = document.getElementsByClassName("accordion");
 for(i=0; i<accordion.length; i++){
     accordion[i].addEventListener("click", function() {
@@ -14,9 +14,7 @@ for(i=0; i<accordion.length; i++){
     });
 }
 
-
 //-------------------slider for small devices-----------------
-
 
 /* const mediaQuery = window.matchMedia('(max-width: 920px)');
  mediaQuery.addEventListener('change', function (e) {});
@@ -24,37 +22,36 @@ for(i=0; i<accordion.length; i++){
  risolvere: se rimpicciolisco e allargo a pagina raddoppia le mediaQuery
 */
 
-    const ele = document.getElementById('slider');
-    ele.style.cursor = 'grab';
+    const slider = document.getElementById('slider');
+    slider.style.cursor = 'grab';
 
     let pos = { left: 0, x: 0 };
 
-    
-    ele.addEventListener("mousedown", function (e) {
-        ele.style.cursor = 'grabbing';
-        ele.style.userSelect = 'none';
+    //quando clicchiamo con il mouse sullo slider
+    slider.addEventListener("mousedown", function (e) {
+        slider.style.cursor = 'grabbing';
+        slider.style.userSelect = 'none';
 
         pos = {
-            left: ele.scrollLeft,
-            // Get the current mouse position
-            x: e.clientX,
+            left: slider.scrollLeft, // indica di quanti pixel ci siamo spostati da sinistra
+            x: e.clientX, // posizione attuale del mouse
         };
 
         document.addEventListener('mousemove', mouseMoveHandler);
         document.addEventListener('mouseup', mouseUpHandler);
     });
 
+    //quando muoviamo il mouse
     const mouseMoveHandler = function (e) {
-        // How far the mouse has been moved
-        const dx = e.clientX - pos.x;
-
-        // Scroll the element
-        ele.scrollLeft = pos.left - dx;
+        const dx = e.clientX - pos.x;  // indica di quanto è stato spostato il mouse
+        slider.scrollLeft = pos.left - dx; // "Scrolla" l'elemento
+        console.log(pos.left + "  -  " +  dx + " = "+ slider.scrollLeft);
     };
 
+    //quando rilasciamo il tasto del mouse
     const mouseUpHandler = function () {
-        ele.style.cursor = 'grab';
-        ele.style.removeProperty('user-select');
+        slider.style.cursor = 'grab';
+        slider.style.removeProperty('user-select');
 
         document.removeEventListener('mousemove', mouseMoveHandler);
         document.removeEventListener('mouseup', mouseUpHandler);
