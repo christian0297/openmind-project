@@ -3,24 +3,28 @@
 document.querySelector(".banner-close").addEventListener("click", ()=>{
     document.querySelector(".banner").style.display = "none";
     //document.querySelector(".banner").remove();
-    //vedere quale dei due è migliore dopo aver visto lezione sul caching (?)
+
+    sessionStorage.setItem("banner", "closeBanner" );
 });
 
-//-------------------------accordion footer------------------------------
+
+//--------------------session storage banner--------------------------
+
+if(sessionStorage.getItem('banner') ===  "closeBanner")
+    document.querySelector(".banner").style.display = "none";
+
+
+
+//-------------------------accordions------------------------------
 const accordion = document.getElementsByClassName("accordion");
 for(i=0; i<accordion.length; i++){
-    accordion[i].addEventListener("click", function() {
-        this.classList.toggle("active");
+    accordion[i].children[0].addEventListener("click", function() {
+            this.parentElement.classList.toggle("active");
     });
 }
 
-//-------------------slider for small devices-----------------
+//-------------------slider for small devices "on Desktop"-----------------
 
-/* const mediaQuery = window.matchMedia('(max-width: 920px)');
- mediaQuery.addEventListener('change', function (e) {});
- Da usare per eliminare il puntatore grab per pagine superiori a 920.
- risolvere: se rimpicciolisco e allargo a pagina raddoppia le mediaQuery
-*/
 
     const slider = document.getElementById('slider');
     slider.style.cursor = 'grab';
@@ -42,14 +46,13 @@ for(i=0; i<accordion.length; i++){
     });
 
     //quando muoviamo il mouse
-    const mouseMoveHandler = function (e) {
+    function mouseMoveHandler(e) {
         const dx = e.clientX - pos.x;  // indica di quanto è stato spostato il mouse
         slider.scrollLeft = pos.left - dx; // "Scrolla" l'elemento
-        console.log(pos.left + "  -  " +  dx + " = "+ slider.scrollLeft);
     };
 
     //quando rilasciamo il tasto del mouse
-    const mouseUpHandler = function () {
+    function mouseUpHandler() {
         slider.style.cursor = 'grab';
         slider.style.removeProperty('user-select');
 
@@ -57,3 +60,16 @@ for(i=0; i<accordion.length; i++){
         document.removeEventListener('mouseup', mouseUpHandler);
     };
 
+
+
+    // ---------------------load the modal when the dom is loaded------------------------
+    document.addEventListener("DOMContentLoaded", function(){
+        MicroModal.init();
+    });
+
+
+    // -----------------insert the input already present in that of the modal-----------
+    document.querySelector(".send-email").addEventListener("click", function(){
+        document.getElementById("email-modal").value = document.getElementById("email").value;
+    });
+   

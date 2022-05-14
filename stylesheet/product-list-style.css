@@ -84,22 +84,42 @@ button{
 }
 
 /* media item */
+.product-item a{
+    text-decoration: none;
+    color: #000;
+}
+
 .product-item .product-media {
     position: relative;
     background: url( ../images/strawberry-product1.webp) no-repeat center / cover;
     height: 400px; 
     padding: 5.2% 4%;
+    transition: transform 0.5s ease;
 }
 
+.product-item .product-media:hover {
+   transform: scale(1.05);
+   border: solid 2px #E5E5E5;
+   z-index: 1;
+}
+
+
+
 /* labels in the media */
-.product-item .product-media label, .product-item .product-media span{
+.product-item .product-media span{
     font-weight: 800;
     font-size: 1rem;
     line-height: 1.2rem;
     letter-spacing: 0.05rem;
 }
 
-.product-item .product-media span{
+.product-item .product-media span:nth-child(1){
+    position: absolute;
+    left: 4%;
+    top: 6%;
+}
+
+.product-item .product-media span:nth-child(3){
     position: absolute;
     left: 4%;
     bottom: 6%;
@@ -110,6 +130,11 @@ button{
     position: absolute;
     right: 4.5%;
     top: 4.5%;
+    transition: transform 0.5 ease;
+}
+
+.product-item .product-media .btn-heart:hover{
+    transform: scale(1.15);
 }
 
 .product-item .product-media .heart-fill{
@@ -198,7 +223,7 @@ button{
     }
 
     /* style for open specific product page */
-    .container-go-to-product, .product-item .product-media label, .product-item .product-media span{
+    .container-go-to-product, .product-item .product-media span{
         background-color: #fff;
     }
 
